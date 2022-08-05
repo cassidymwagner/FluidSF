@@ -1,10 +1,26 @@
 import numpy as np
 
 def traditional_scalar(scalar, x, y, boundary="Periodic",order=3):
-    """
-    Add docstring
-    """
+    """_summary_
 
+    Parameters
+    ----------
+    scalar : _type_
+        _description_
+    x : _type_
+        _description_
+    y : _type_
+        _description_
+    boundary : str, optional
+        _description_, by default "Periodic"
+    order : int, optional
+        _description_, by default 3
+
+    Returns
+    -------
+    _type_
+        _description_
+    """
     s = scalar
 
     if boundary == "Periodic":

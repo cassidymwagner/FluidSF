@@ -2,8 +2,27 @@ import numpy as np
 from .calculate_scalar_advection import calculate_scalar_advection
 
 def advection_scalar(scalar, par_u, par_v, x, y, boundary="Periodic"):
-    """
-    Add docstring
+    """_summary_
+
+    Parameters
+    ----------
+    scalar : _type_
+        _description_
+    par_u : _type_
+        _description_
+    par_v : _type_
+        _description_
+    x : _type_
+        _description_
+    y : _type_
+        _description_
+    boundary : str, optional
+        _description_, by default "Periodic"
+
+    Returns
+    -------
+    _type_
+        _description_
     """
     u = par_u
     v = par_v

@@ -1,10 +1,23 @@
 import numpy as np
 
 def traditional_velocity(par_u, par_v, x, y, boundary="Periodic",order=3):
+    """_summary_
+
+    Parameters
+    ----------
+    par_u : _type_
+        _description_
+    par_v : _type_
+        _description_
+    x : _type_
+        _description_
+    y : _type_
+        _description_
+    boundary : str, optional
+        _description_, by default "Periodic"
+    order : int, optional
+        _description_, by default 3
     """
-    Add docstring
-    """  
-    
     u = par_u
     v = par_v
 

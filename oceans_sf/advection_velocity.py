@@ -4,8 +4,26 @@ from .calculate_velocity_advection import calculate_velocity_advection
 
 
 def advection_velocity(par_u, par_v, x, y, boundary="Periodic"):
-    """
-    Add docstring
+    """_summary_
+
+    Parameters
+    ----------
+    par_u : _type_
+        _description_
+    par_v : _type_
+        _description_
+    x : _type_
+        _description_
+    y : _type_
+        _description_
+    boundary : str, optional
+        Type of boundary condition, by default "Periodic". Currently only
+        "Periodic" is explicitly supported. 
+
+    Returns
+    -------
+    _type_
+        _description_
     """
     u = par_u
     v = par_v
