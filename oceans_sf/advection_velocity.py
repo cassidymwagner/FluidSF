@@ -17,7 +17,7 @@ def advection_velocity(par_u, par_v, x, y, boundary="Periodic"):
 
     SF_z = np.zeros(np.shape(sep))
     SF_m = np.zeros(np.shape(sep))
-    SF_iso = np.zeros(np.shape(sep))
+    # SF_iso = np.zeros(np.shape(sep))
     xd = np.zeros(np.shape(sep))
     yd = np.zeros(np.shape(sep))
 
@@ -38,21 +38,22 @@ def advection_velocity(par_u, par_v, x, y, boundary="Periodic"):
         )
 
     #Isotropic sampling
-    sep_combinations = np.array(np.meshgrid(sep,sep)).T.reshape(-1,2)
-    tmp = np.zeros(np.shape(sep_combinations))
-    for idx,xy in enumerate(sep_combinations):
-        sep_distance = np.round(np.sqrt(xy[0]**2 + xy[1]**2))
+    # sep_combinations = np.array(np.meshgrid(sep,sep)).T.reshape(-1,2)
+    # tmp = np.zeros(np.shape(sep_combinations))
+    # for idx,xy in enumerate(sep_combinations):
+    #     sep_distance = np.round(np.sqrt(xy[0]**2 + xy[1]**2))
 
-        SF_iso = np.nanmean(
-            (np.roll(adv_E, xy[0]) - adv_E) * (np.roll(u, xy[0]) - u)
-            + (np.roll(adv_N, xy[1]) - adv_N) * (np.roll(v, xy[1]) - v)
-        ) 
+    #     SF_iso = np.nanmean(
+    #         (np.roll(adv_E, xy[0]) - adv_E) * (np.roll(u, xy[0]) - u)
+    #         + (np.roll(adv_N, xy[1]) - adv_N) * (np.roll(v, xy[1]) - v)
+    #     ) 
 
-        tmp[idx] = [sep_distance,SF_iso]
+    #     tmp[idx] = [sep_distance,SF_iso]
     
-    df = pd.DataFrame(tmp)
-    df_mean = df.groupby(0).mean().reset_index()
-    isod = df_mean.iloc[:,0] #Binned separation distances
-    SF_iso = df_mean.iloc[:,1]
+    # df = pd.DataFrame(tmp)
+    # df_mean = df.groupby(0).mean().reset_index()
+    # isod = df_mean.iloc[:,0] #Binned separation distances
+    # SF_iso = df_mean.iloc[:,1]
     
-    return (SF_z, SF_m, SF_iso, xd, yd, isod)
+    return (SF_z, SF_m, xd, yd)
+    # return (SF_z, SF_m, SF_iso, xd, yd, isod)
