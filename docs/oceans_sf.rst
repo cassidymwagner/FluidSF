@@ -1,4 +1,4 @@
-oceans\_sf package
+Documentation
 ==================
 
 Submodules
